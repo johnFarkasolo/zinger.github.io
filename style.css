@@ -1,0 +1,539 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed');
+/* --------------- reset.css --------------- */
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, em, img, strong, sub, sup, b, u, i,  dl, dt, dd, ol, ul, li, fieldset, form, label, table, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;                               /* обнуляем отступы и убираем бордюры */
+	vertical-align: baseline;          /* приводим все к одной базовой линии */
+	background: transparent;      /* чтобы не проскакивали левые фоны, установленные по умолчанию */
+	font-size: 100%;                     /* размер шрифта всем одинаковый */
+}
+a {                                      	     /* ссылка не в общем списке чтобы не сбрасывать outline по умолчанию */
+	margin:0;
+	padding:0;
+	font-size:100%;
+	vertical-align:baseline;
+	background:transparent;
+	outline:none;
+}
+table {						/* устраняем отступы между ячейками таблицы */
+	border-collapse: collapse; 
+	border-spacing: 0;
+}
+td, td img {
+	vertical-align: top;			/* возвращаем привычное вертикальное выравнивание */
+} 
+input, select, button, textarea {
+	margin: 0; 				/* убираем отступы по умолчанию для элементов форм (в частности для checkbox и radio) */
+	font-size: 100%; 			/* делаем размер шрифтов везде одинаковым */
+	outline: none;
+}
+input[type="password"] {
+	padding: 0; 				/* убираем внутренние отступы для текстовых полей */
+}
+input[type="checkbox"] { 		/* вертикальное выравнивание чекбоксов и радиобатонов относительно меток */
+	vertical-align: bottom;
+}
+input[type="radio"] {
+	vertical-align: text-bottom;
+}
+sub {
+	vertical-align: sub;
+	font-size: smaller;
+}
+sup {
+	vertical-align: super;
+	font-size: smaller;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display:block;
+}
+nav ul {
+	 list-style:none;
+}
+textarea {
+	resize: none;
+}
+/* --------------- /reset.css --------------- */
+
+/* --------------- базовые настройки ---------*/
+html {
+	min-height:100%; /* всегда показываем вертикальную полосу прокрутки  */
+}
+body {
+	text-align: left;
+	font-size: 1em; /* используем безопасные шрифтовые CSS стеки */
+	min-height:100%;
+	font-family: 'Lato', sans-serif; /* font-family: 'Droid Sans', sans-serif; */
+}
+a, a:visited { /* порядок правил для ссылок имеет значение */
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+a:hover {
+	color: #00a9ff;
+	text-decoration:none;
+}
+a:focus, a:active {
+	color: #fff;
+	text-decoration: underline;
+}
+h1, h2, h3, h4, h5, h6{
+	font-weight:normal;
+}
+img{
+	max-width:100%;
+}
+.clr{
+	clear:both;
+}
+.clearfix:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+/* --------------- /базовые настройки ---------*/
+
+.center-block-main {
+	max-width: 1170px;
+	margin: 0 auto;
+}
+header {
+	background-color: rgba(7,7,7,0.3);
+	position: absolute;
+	z-index: 2;
+	width: 100%;
+}
+.header-top {
+	padding: 15px 0 25px;
+}
+.logo {
+	float: left;
+}
+	.menu {
+		float: right;
+		font-family: 'Droid Sans', sans-serif;
+		margin-top: 25px;
+	}
+		.menu li {
+			float: left;
+			margin-right: 30px;	
+			font-size: 0.875em;
+		}
+			.menu li a {
+				color: #fff;
+				text-decoration: none;
+			 }
+			 .menu li a:hover {
+			 	color: #00a9ff;
+			 }
+.my-slider img{
+	width: 100%;
+}
+	.my-slider ul li {
+		position: relative;
+		color: #fff; 
+		/*border-bottom: 4px solid #4bcaff;
+		font-size: 0;*/
+	}
+	.slide-text-wrapper {
+		position: absolute;
+		top: 35%; left: 44%;
+		max-width: 700px;
+	}
+	.my-slider h2 {
+		font-size: 3em;
+		line-height: 1.1;
+		font-weight: 300;
+		margin-bottom: 20px;
+	}
+	.my-slider h2 > span {
+		font-weight: 700;
+	}
+	.my-slider p {
+		font-size: 0.875em;
+		font-weight: 300;
+	}
+	a.download-btn {
+		padding:20px 50px;
+		display: inline-block;
+		border: 2px solid #fff;
+		border-radius: 5px;
+		font-size: 15px; 
+		font-weight: 600;
+		margin-top: 30px;
+	}
+	a:hover.download-btn{
+		color: #4bcaff;
+		border: 2px solid #4bcaff;
+	}
+	.unslider-nav {
+		max-width: 1170px;
+		margin: 0 auto;
+		position: relative;
+		top: -40px;
+	}
+.block3section {
+		margin: -25px auto 60px auto;
+		background-color: #f9f9f9;
+		padding: 70px 0 100px 0;
+		border-bottom: 1px solid #eee;
+	}
+	.block3main {
+		padding: 60px 0 0 0;
+	}
+	.header {
+		text-align: center;
+		margin-bottom: 65px;
+		color: #414042;
+	}
+	.header h2 {
+		font-size: 2.25em;
+	}
+	.header h3 {
+		color: #5a595a;
+		font-size: 1.25em;
+	}
+	.header h2>strong {
+		font-weight: 900;
+	}
+	.block3main article {
+		width: 30%;
+		float: left;
+		margin-left: 5%;
+		text-align: center;
+	}
+	.block3main article:first-child{
+		margin-left: 0;
+	}
+	.block3main article img {
+		display: block;
+		margin: 0 auto 20px auto;
+	}
+	.block3main article h2 {
+		font-size: 1.1em;
+		margin-bottom: 20px;
+		text-transform: uppercase;	
+	}
+	.block3main article p {
+		font-size: 0.875em;
+		line-height: 1.4;
+		color: #5a595a;
+	}
+.block4section  {
+	margin: 0 auto 100px auto;
+}
+	.block4section article {
+		float: left;
+		width: 23%;
+		margin-right: 2.666666666666667%;
+	}
+	.block4section article:last-child {
+		margin-right: 0;
+	}
+	.block4section article img {
+		display: block;
+		margin: 0 auto;
+	}
+	.block4section article .content {
+		text-align: center;
+		padding: 20px;
+	}
+	.block4section article p {
+		color: #838383;
+		font-size: 0.8125em;
+		margin-bottom: 20px;
+	}
+.video-section {
+	background: url(images/video.jpg) center top no-repeat;
+	-webkit-background-size: 100%;
+	background-size: cover;
+	padding: 150px 0;
+}
+	.video-main-text {
+		text-align: center;
+		color: #fff;
+	}
+	.video-main-text img {
+		cursor: pointer;
+		margin-bottom: 20px;
+	}
+	.video-main-text h2 {
+		font-size: 3em;
+		line-height: 1.1;
+		font-weight: 300;
+		margin-bottom: 20px;
+	}
+	.video-main-text h2 > span {
+		font-weight: 700;
+	}
+	.video-main-text p {
+		font-size: 0.875em;
+		font-weight: 300;
+	}
+.subscribe {
+	background-color: #414042;
+	text-align: center;
+	height: 210px;
+}
+	.subscribe h2 {
+		font-size: 3.43em;
+		color: #fff;
+		padding-top:30px;
+		font-weight: 900;
+	}
+	.block-btn {
+		margin: 15px auto;
+		width: 200px;
+		height: 60px;
+		position: relative;
+	}
+	.block-btn a {
+		color: #414042;
+		text-transform: none;		
+	}
+		
+	.download {
+		background-color: #4bcaff; 
+		width: 150px;
+		height: 60px;
+		padding: 0 0 0 50px;
+		text-align: center;
+		position: absolute;
+		line-height: 60px;
+		font-size: 1em;
+		top:0;
+		left: 0;
+		z-index: 2;
+		transition: 1s;
+		border-radius: 3px;
+	}
+
+	.disc {
+		background-color: #277697;
+		position: absolute;
+		color: #fff;
+		width: 100px;
+		height: 40px;
+		padding: 10px 10px 10px 0;
+		text-align: right;
+		line-height: 40px;
+		top: 0;
+		right: 0;
+		z-index: 1;
+		border-radius: 0 3px 3px 0;
+	}
+	img.set {
+		vertical-align: middle;
+		position: absolute;
+		z-index: 3;
+		left: 14px;
+		top: 14px;
+		transition: 1.5s;
+	}
+	.block-btn:hover .download {
+		width: 85px;
+		font-size: 0.8125em;
+		border-radius: 3px 0 0 3px;
+	}
+	.block-btn:hover img.set {
+		transform: rotate(360deg);
+	}
+.contact-main {
+	position: relative;
+	height: 550px;
+}
+	.contact-block {
+		position: absolute;
+		bottom: 50px;
+		width: 320px;
+		left: 50%;
+		margin-left: -160px;
+		background: rgba(75, 202, 255, 0.7);
+		border-radius: 5px;
+		padding: 30px 30px 10px 30px;
+		box-sizing: border-box;
+	}
+	.contact-block h2 {
+		text-align: center;
+		padding-bottom: 30px;
+		color: #fff;
+		font-size: 2.25em;
+	}
+	.ftrmail {
+		text-align: center;
+		width: 100%; 
+		font-size: 0.75em;
+		margin-bottom: 15px;
+		padding: 7px 20px;
+		border-radius: 5px;
+		border:none;
+		box-sizing: border-box;
+		color: #737275;
+	}
+	.ftr-text {
+		text-align: center;
+		width: 100%; 
+		font-size: 0.75em;
+		margin-bottom: 15px;
+		padding: 7px 20px;
+		border-radius: 5px;
+		border:none;
+		box-sizing: border-box;
+		color: #737275;
+	}
+	.ftrsubmit {
+		font-size: 0.875em;
+		margin-bottom: 15px;
+		padding: 10px 40px;
+		border-radius: 5px;
+		border:none;
+		box-sizing: border-box;
+		color: rgba(75, 202, 255, 0.7);
+		cursor: pointer;
+		background: #414042;
+		display: block;
+		margin:0 auto;
+	}
+	.ftrsubmit:hover {
+		color: #fff;
+		background: rgba(75, 202, 255, 0.9);
+	}
+footer {
+	background-color: #414042;
+	padding: 45px 0;
+	color: #808081;
+}
+	
+/* --------------- Медиазапросы ---------*/
+@media screen and (max-width:1000px)  {
+	.my-slider h2 {
+		 font-size: 36px;
+	}
+	.my-slider p {
+		font-size: 14px; 
+	}
+	.slide-text-wrapper {
+    	position: absolute;
+    	top: 25%;
+    	left: 44%;
+	}
+@media screen and (max-width:870px) {
+	.my-slider h2 {
+		 font-size: 32px;
+	}
+	a.download-btn {
+    	padding: 15px 30px;
+	}
+	.block4section article {
+    	width: 50%;
+    	margin-right: 0%; 
+	}
+}
+@media screen and (max-width:750px) {
+	header {
+		background-color: rgba(7,7,7,0.9);
+		position: relative;
+	}
+	.slide-text-wrapper {
+    	top: 10%;
+    	left: 45%;
+	}
+
+}
+@media screen and (max-width:670px) {
+	.logo {
+		float: none;
+		margin-left: 40%;
+	}
+	.menu {
+		float: none;
+		margin-left: 10%;
+	}
+	.my-slider h2 {
+		 font-size: 26px;
+	}
+	.my-slider p {
+		font-size: 14px; 
+	}
+
+}
+@media screen and (max-width:600px) {
+
+	.block3main article {
+		width: 95%; 
+		float: none; 
+		margin:0 2.5% 30px 2.5%;
+	}
+	.block3main article img {
+		/*width: 100%;  только если широкоформатные картинки */
+	}
+	.block3main article:first-child {
+		margin:0 2.5% 30px 2.5%;
+	}
+	.about article {
+		float: none;
+		width: 95%;
+		margin:0 2.5% 30px 2.5%;
+	}
+	.map {
+		float: none;
+		width: 95%;
+		margin:0 2.5% 30px 2.5%;
+	}
+}
+@media screen and (max-width:480px) {
+	.my-slider ul li h2 {
+		top: 50px; font-size: 1.275em;
+	}
+	.my-slider ul li p {
+		top: 100px; font-size: 0.8em;
+	}
+	.block4section article {
+		width: 95%; 
+		float: none; 
+		margin:0 2.5% 30px 2.5%;
+		overflow: hidden;
+	}
+	.block4section article:last-child {
+		margin:0 2.5% 30px 2.5%;
+	}
+}
+@media screen and (max-width:410px) {
+	.header-top {
+	padding: 10px 0;
+	}
+	.logo {
+	float: none;
+	text-align: center;
+	margin-bottom: 10px;
+	}
+	.contact-basket {
+	float: none;
+	display: table;
+	margin:0 auto;
+	}
+	.email-inpt {
+		width: 95%; 
+		float: none; 
+		margin:0 2.5% 20px 2.5%;
+		box-sizing: border-box;
+		}
+	.submit-inpt {
+		margin-left: 2.5%;
+		}
+}
+@media screen and (max-width:340px) {
+	.header-basket {
+		padding: 7px 5px;
+	}
+	.my-slider ul li h2 {
+		top: 30px; font-size: 1em;
+	}
+	.my-slider ul li p {
+		top: 70px;
+	}
+}
+/* --------------- /Медиазапросы ---------*/
